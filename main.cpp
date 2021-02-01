@@ -16,15 +16,12 @@ int size;
 int unit_block_size;
 std::vector<std::vector<int>> field;
 bool is_answer_found = false;
-void input(); void solve(); void give_answer();
-
-/*ideas
-available_numbersはCoordinateにつけるとどうだろう。z
-*/
+void input(); void solve(); void give_answer(); void print(std::string);
 
 int main(){
     input();
     solve();
+    if(!is_answer_found) print("解が存在しません。");
 }
 
 void print(std::string s){
@@ -48,6 +45,7 @@ void input(){
             std::cin >> field[i][j];
         }
     }
+    print("入力を完了しました。");
 }
 
 Coordinate find_empty_square(){
@@ -112,3 +110,8 @@ void give_answer(){
     }
     is_answer_found = true;
 }
+
+
+/*ideas
+available_numbersはCoordinateにつけるとどうだろう。z
+*/
